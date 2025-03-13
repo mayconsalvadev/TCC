@@ -1,0 +1,35 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+/* Media Query para telas médias (tablets) */
+@media (max-width: 1024px) {
+  .hero-text h1 {
+    font-size: 4.5rem; /* Diminui o tamanho do título para tablets */
+  }
+
+  .hero-text p {
+    font-size: 1.1rem; /* Reduz o tamanho do texto */
+  }
+
+  .hero-text .line {
+    width: 12vh; /* Ajusta a largura da linha */
+  }
+}
+
+/* Media Query para telas pequenas (celulares) */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 3rem; /* Título menor para dispositivos móveis */
+  }
+
+  .hero-text p {
+    font-size: 1rem; /* Texto de descrição menor */
+  }
+
+  .hero-text .line {
+    width: 8vh; /* Linha menor em telas pequenas */
+  }
+}

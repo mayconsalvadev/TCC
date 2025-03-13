@@ -1,0 +1,207 @@
+/* Estilo geral */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden; /* Impede o scroll horizontal */
+  overflow-y: auto; /* Permite rolagem vertical */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 10%; /* Centraliza o conteúdo */
+  padding: 0 20px; /* Ajusta o padding para a margem interna */
+}
+
+/* Cabeçalho */
+header {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.7
+  ); /* Menu branco com menos transparência (90%) */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+  padding: 10px 0; /* Reduzir o padding */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  position: fixed; /* Torna o menu fixo no topo */
+  top: 0;
+  left: 0;
+  width: 100%; /* Garante que o menu ocupe toda a largura */
+  z-index: 1000; /* Garante que o menu fique acima do conteúdo */
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Mantém a logo à esquerda e o menu à direita */
+  flex-wrap: wrap; /* Permite que os itens se quebrem em múltiplas linhas */
+}
+
+/* Logo */
+.logo h1 {
+  font-size: 24px;
+  color: #007bff;
+  margin-right: 50px; /* Espaço à direita da logo */
+  margin-left: 0; /* Garante que a logo fique no início da linha */
+}
+
+/* Menu de navegação */
+nav {
+  flex: 1; /* Ocupa espaço proporcional */
+  display: flex;
+  justify-content: center; /* Centraliza o menu */
+}
+
+nav ul {
+  display: flex; /* Exibe itens lado a lado */
+  list-style: none; /* Remove os marcadores */
+  justify-content: center; /* Centraliza os itens */
+  gap: 20px; /* Espaçamento entre os itens */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding: 10px 15px;
+}
+
+nav ul li a:hover {
+  color: #007bff; /* Azul ao passar o mouse */
+}
+
+/* Botões de autenticação */
+.auth-buttons {
+  position: absolute;
+  right: 20px; /* Mantém os botões no canto direito */
+  top: 50%; /* Centraliza verticalmente no cabeçalho */
+  transform: translateY(
+    -50%
+  ); /* Ajusta a posição para ficar realmente no meio */
+  display: flex;
+  gap: 10px; /* Espaçamento entre os botões */
+}
+
+.auth-buttons .btn {
+  text-decoration: none; /* Remove o sublinhado */
+  padding: 8px 16px; /* Tamanho interno dos botões */
+  border-radius: 5px; /* Arredonda os cantos */
+  font-weight: bold;
+  font-size: 0.9rem; /* Tamanho do texto */
+  color: #fff; /* Cor do texto */
+  background-color: #007bff; /* Fundo azul */
+  transition: background-color 0.3s ease; /* Animação ao passar o mouse */
+}
+
+.auth-buttons .btn:hover {
+  background-color: #0056b3; /* Azul mais escuro no hover */
+}
+
+.auth-buttons .btn.secondary {
+  background-color: transparent; /* Botão transparente */
+  color: #007bff; /* Texto azul */
+  border: 1px solid #007bff; /* Borda azul */
+}
+
+.auth-buttons .btn.secondary:hover {
+  background-color: #007bff; /* Azul no fundo no hover */
+  color: #fff; /* Texto branco no hover */
+}
+
+/* Seção de fundo */
+.background-section {
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 50%,
+      rgba(0, 0, 0, 0.8) 100%
+    ),
+    url("images/background.png") no-repeat center center; /* Centraliza a imagem */
+  background-size: cover; /* Garante que a imagem cubra toda a tela */
+  width: 100%;
+  height: 100vh; /* Garantir que ocupe toda a altura da janela */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-attachment: fixed; /* Fixa a imagem no fundo durante o scroll */
+  position: relative; /* Garante que o conteúdo da seção fique por cima da imagem */
+  overflow-x: hidden; /* Impede o scroll horizontal */
+}
+
+/* Conteúdo da seção */
+.hero-content {
+  margin-top: 30%; /* Coloca o conteúdo um pouco mais para baixo para dar espaço ao menu */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinha o texto à esquerda */
+  text-align: left;
+  color: #e6e6e6; /* Torna o texto branco */
+  padding: 0 8%; /* Adiciona espaçamento interno nas laterais */
+}
+
+/* Texto */
+.hero-content h1 {
+  font-size: 3rem; /* Fonte maior */
+  line-height: 0.5; /* Espaçamento ajustado */
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  margin-top: 20px;
+  font-size: 1.5rem; /* Texto menor */
+  line-height: 0.1;
+  margin-bottom: 5px;
+}
+
+/* Botão */
+.hero-content a.cta-button {
+  margin-left: 50%;
+  margin-top: -10%;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: #007bff;
+  padding: 15px 30px;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.hero-content a.cta-button:hover {
+  background-color: #0056b3; /* Escurece no hover */
+}
+/* Para telas pequenas (celulares) */
+@media (max-width: 768px) {
+  .auth-buttons {
+    position: static; /* Retira a posição fixa */
+    display: flex;
+    margin-left: 30%;
+    flex-direction: row; /* Organiza os botões horizontalmente */
+    justify-content: center; /* Centraliza os botões */
+    margin-top: 25px; /* Dá espaço entre o menu e os botões */
+    gap: 15px; /* Ajusta o espaçamento entre os botões */
+  }
+}
+
+/* Para telas menores que 480px (dispositivos móveis em modo retrato) */
+@media (max-width: 480px) {
+  .auth-buttons {
+    position: static; /* Retira a posição fixa */
+    display: flex;
+    margin-left: 30%;
+    flex-direction: column; /* Organiza os botões em coluna */
+    align-items: center; /* Centraliza os botões */
+    gap: 10px; /* Ajusta o espaçamento entre os botões */
+    margin-top: 25px; /* Dá um pequeno espaço acima */
+  }
+
+  .auth-buttons .btn {
+    width: 100%; /* Faz os botões ocuparem toda a largura disponível */
+    padding: 12px; /* Ajusta o padding dos botões */
+  }
+}
